@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="patterns :: head"></head>
+
+<body>
+<nav th:replace="patterns :: navigation"></nav>
+
+<div class="container-fluid mt-5">
+    <h3>Orders</h3>
+    <table>
+        <thead>
+        <tr>
+            <th> Order Id </th>
+            <th> Product Name </th>
+            <th> Product Category </th>
+            <th> Order Status </th>
+            <th> Order Time </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="listedOrder : ${orders}" >
+
+            <td th:text="${listedOrder.orderId}"/td >
+            <td th:text="${listedOrder.orderedProductName}"/td>
+            <td th:text="${listedOrder.orderedProductStatus}"/td>
+            <td th:text="${listedOrder.orderedProductCategory}"/td>
+            <td th:text="${listedOrder.orderedProductCreatedAt}"/td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

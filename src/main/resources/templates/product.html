@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="patterns :: head"></head>
+
+<body>
+<nav th:replace="patterns :: navigation"></nav>
+
+<div class="container">
+    <form action="/products/save" th:object="${product}" method="POST">
+        <input type="text" placeholder="Product Name" th:field="${product.productName}">
+
+        <select th:field="${product.productStatus}" >
+            <option th:value="Available"> Available </option>
+            <option th:value="In Use"> In use </option>
+        </select>
+        <input type="text" placeholder="Product Category" th:field="${product.productCategory}">
+        <textarea type="text" placeholder="Product Description" th:field="${product.productDescription}" ></textarea>
+        <input type="text" placeholder="Created at" th:field="${product.productCreatedAt}">
+        <button class="btn btn-primary addProduct" type="submit">Save Product</button>
+    </form>
+</div>
+
+</body>
+
+</html>

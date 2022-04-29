@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="patterns :: head"></head>
+
+<body>
+<nav th:replace="patterns :: navigation"></nav>
+
+<div class="container-fluid mt-5">
+<h3>Products' List</h3>
+<table>
+    <thead>
+    <tr>
+        <th> Product Id </th>
+        <th> Product Name </th>
+        <th> Status </th>
+        <th> Category </th>
+        <th> Description </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="listedProduct : ${products}" >
+
+        <td th:text="${listedProduct.productId}"/td >
+        <td th:text="${listedProduct.productName}"/td>
+        <td th:text="${listedProduct.productStatus}"/td>
+        <td th:text="${listedProduct.productCategory}"/td>
+        <td th:text="${listedProduct.productDescription}"/td>
+
+        <form action="/orders/save" th:object="${order}" method="POST">
+        <td>
+            <a class="btn btn-primary addToOrder"
+               th:attr="data-id=${listedProduct.productId}"
+               th:href="@{'/orders/save/' + ${listedProduct.productId}}">Order this product</a>
+        </td>
+        </form>
+    </tr>
+
+    </tbody>
+</table>
+</div>
+</body>
+</html>
