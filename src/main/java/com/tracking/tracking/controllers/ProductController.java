@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+//Controller class is used for receiving and processing requests
+// and returning the view in response
+
 @Controller
 @RequestMapping("/products")
 public class ProductController {

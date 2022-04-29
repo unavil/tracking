@@ -6,6 +6,9 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.Min;
 import java.util.Optional;
 
+//Services interact with transactions - save, get, screen, delete
+//Stored in a separate package - Service interfaces and Service classes that implement them
+
 @Validated
 public interface ProductService {
     @NotNull Iterable<Product> getAllProducts();

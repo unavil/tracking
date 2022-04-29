@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
+
+//Controller class is used for receiving and processing requests
+// and returning the view in response
 
 @Controller
 @RequestMapping("/orders")

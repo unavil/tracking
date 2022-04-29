@@ -4,6 +4,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+//Class with constructors, getters and setters
+//With Hibernate annotations mapped to MySQL
+
 @Entity
 @Table(name = "orders")
 public class Order {
